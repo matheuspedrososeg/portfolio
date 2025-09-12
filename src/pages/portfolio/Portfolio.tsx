@@ -1,8 +1,8 @@
-import { Layout, Menu } from "antd";
+import { Divider, Layout, Menu } from "antd";
 import { FaGithub } from "react-icons/fa";
 import { colors } from "../../assets/styles/colors";
 import type { PortfolioController } from "./hook/usePortfolio";
-import { Container, HeaderContacts, StyledButton } from "./styles/PortfolioStyles";
+import { Container, HeaderContacts, HelloCard, StyledButton } from "./styles/PortfolioStyles";
 
 interface PortfolioProps {
     controller: PortfolioController
@@ -21,8 +21,9 @@ export default function Portfolio({ controller }: PortfolioProps) {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '0 24px'
-                }}>
+                    padding: '0 24px',
+                }}
+                >
 
                 <Menu
                     mode="horizontal"
@@ -40,8 +41,39 @@ export default function Portfolio({ controller }: PortfolioProps) {
 
             </Header>
 
-            <Content>
+            <Content
+                style={{
+                    width: '100%',
+                    height: '100vh',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
+            >
+                <HelloCard>
+                    <div>
+                        <h1>Hello,</h1>
+                        <p>...</p>
+                    </div>
+
+                </HelloCard>
+
             </Content>
+
+            <Divider size="large" plain style={{fontSize: '8px'}}><h1>About me</h1></Divider>
+
+            <Content
+                style={{
+                    width: '100%',
+                    height: '100vh',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
+            >
+
+            </Content>
+
         </Container>
     )
 }

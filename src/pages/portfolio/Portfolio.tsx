@@ -22,6 +22,9 @@ export default function Portfolio({ controller }: PortfolioProps) {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     padding: '0 24px',
+                    position: 'fixed',
+                    width: '100%',
+                    zIndex: '1000'
                 }}
                 >
 
@@ -29,6 +32,8 @@ export default function Portfolio({ controller }: PortfolioProps) {
                     mode="horizontal"
                     style={{ flex: '1', borderBottom: '0' }}
                     items={controller.items}
+                    selectedKeys={[controller.current]}
+                    onClick={controller.handleNavBarClick}
                 />
 
                 <HeaderContacts>
@@ -47,8 +52,9 @@ export default function Portfolio({ controller }: PortfolioProps) {
                     height: '100vh',
                     display: 'flex',
                     justifyContent: 'center',
-                    alignItems: 'center'
+                    alignItems: 'center',
                 }}
+                id="home"
             >
                 <HelloCard>
                     <div>
@@ -60,17 +66,24 @@ export default function Portfolio({ controller }: PortfolioProps) {
 
             </Content>
 
-            <Divider size="large" plain style={{fontSize: '8px'}}><h1>About me</h1></Divider>
 
             <Content
                 style={{
                     width: '100%',
                     height: '100vh',
                     display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center'
+                    flexDirection: 'column',
+                    justifyContent: 'center'
                 }}
+                id="about-me"
             >
+
+                <Divider size="large" plain style={{ fontSize: '8px' }}><h1>About me</h1></Divider>
+
+                <div style={{marginBlock: '2vh', display: 'flex', flexDirection: 'column', width: '100%', maxWidth: '800px'}}>
+                    <p>I'm a full stack trainee software developer, i build and mantain applications using mainly React and Typescript for front-end, with Java and Springboot for back-end development.</p>
+                    <p>I have 1 year worth of experience in building applications with practices such as TDD, Design patterns, SOLID principles and MVVM Architecture. </p>
+                </div>
 
             </Content>
 

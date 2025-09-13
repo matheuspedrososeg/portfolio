@@ -5,15 +5,27 @@ export interface PortfolioController {
     setChecked:(checked: boolean) => void;
     items:[]
     githubOnClick: () => void;
+    handleNavBarClick:(e:any) => void;
+    current:string
 }
 
 function usePortfolio(): PortfolioController {
 
-    const [checked, setChecked] = useState<boolean>(localStorage.getItem("theme") === 'DARK' ? true : false);
+    const [checked, setChecked] = useState<boolean>(localStorage.getItem("theme") === 'DARK' ? true : false)
+    const [current, setCurrent] = useState<string>("home");
 
     const githubOnClick = () => {
         window.open('https://github.com/matheuspedrososeg', '_blank')
     }
+
+    const handleNavBarClick = (e:any) => {
+        setCurrent(e.key);
+        const section = document.getElementById(e.key);
+
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
 
     useEffect(() => {
@@ -22,19 +34,19 @@ function usePortfolio(): PortfolioController {
 
     const items = [
         {
-            key: '1',
+            key: 'home',
             label: 'Home'
         },
         {
-            key: '2',
+            key: 'about-me',
             label: 'About me'
         },
         {
-            key: '3',
+            key: 'skills',
             label: 'Skills'
         },
         {
-            key: '4',
+            key: 'contact',
             label: 'Contact'
         },
     ]
@@ -43,7 +55,9 @@ function usePortfolio(): PortfolioController {
         checked,
         setChecked,
         items,
-        githubOnClick
+        githubOnClick,
+        handleNavBarClick,
+        current
     } as PortfolioController
 }
 

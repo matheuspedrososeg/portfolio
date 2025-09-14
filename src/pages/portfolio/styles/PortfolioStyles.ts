@@ -23,19 +23,20 @@ export const StyledButton = styled(Button)`
 `
 
 export const HelloCard = styled.div`
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 32px;
-    height: 100vh;
-    max-height: 600px;
+    width: 100vw;
     display: flex;
+    justify-content: center;
 
     h1 {
-        font-weight: 600px;
         font-size: 44px;
     }
 
     p {
         color: ${colors.weakSubtext}
     }
+`
+
+export const CarouselCard = styled.div`
+  height: 200px;
+  margin-top: 16px;
 `

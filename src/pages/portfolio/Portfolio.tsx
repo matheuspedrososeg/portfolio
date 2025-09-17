@@ -1,11 +1,12 @@
 import { Carousel, Divider, Layout, Menu } from "antd";
+import { motion } from "framer-motion";
 import { DiJava } from "react-icons/di";
-import { FaGithub, FaReact } from "react-icons/fa";
-import { SiPostgresql, SiSpring, SiTypescript } from "react-icons/si";
+import { FaGithub, FaJava, FaReact } from "react-icons/fa";
+import { SiAntdesign, SiHibernate, SiJavascript, SiJunit5, SiPostgresql, SiSpring, SiTypescript, SiVitest } from "react-icons/si";
 import { colors } from "../../assets/styles/colors";
 import type { PortfolioController } from "./hook/usePortfolio";
-import { CarouselCard, Container, HeaderContacts, HelloCard, StyledButton } from "./styles/PortfolioStyles";
-import { motion } from "framer-motion";
+import { CarouselCard, Container, HeaderContacts, HelloCard, SkillCard, SkillContainer, StyledButton } from "./styles/PortfolioStyles";
+import { GiUsaFlag } from "react-icons/gi";
 
 interface PortfolioProps {
     controller: PortfolioController
@@ -125,11 +126,61 @@ export default function Portfolio({ controller }: PortfolioProps) {
                     height: '100vh',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
                     alignItems: 'center',
                 }}
                 id="skills"
             >
+
+                <SkillContainer>
+                    <div>
+                        <p>Back-end</p>
+                        <SkillCard>
+                            <p>Java</p>
+                            <FaJava size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>Spring</p>
+                            <SiSpring size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>Hibernate</p>
+                            <SiHibernate size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>PostgreSQL</p>
+                            <SiPostgresql size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>JUnit</p>
+                            <SiJunit5 size={32} />
+                        </SkillCard>
+                    </div>
+
+                    <div>
+                        <p>Front-end</p>
+                        <SkillCard>
+                            <p>Typescript</p>
+                            <SiTypescript size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>React</p>
+                            <FaReact size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>Javascript</p>
+                            <SiJavascript size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>Vitest</p>
+                            <SiVitest size={32} />
+                        </SkillCard>
+                        <SkillCard>
+                            <p>Ant Design</p>
+                            <SiAntdesign size={32} />
+                        </SkillCard>
+                    </div>
+
+                </SkillContainer>
 
             </Content>
 

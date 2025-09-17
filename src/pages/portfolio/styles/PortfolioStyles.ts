@@ -40,3 +40,47 @@ export const CarouselCard = styled.div`
   height: 200px;
   margin-top: 16px;
 `
+
+export const SkillCard = styled.div`
+    width: 100%;
+    border: 1px solid ${colors.borderColor};
+    padding: 12px;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    transition: 0.3s ease background-color, color;
+`
+
+export const SkillContainer = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+        flex-direction: column; 
+    }
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        width: 90%;
+        gap: 8px;
+    }
+     
+    & > div > p {
+        color: ${colors.weakSubtext};
+        font-family: 'Instrument';
+        font-style: italic;
+        font-size: 20px;
+        width: 100%;
+        max-width: 600px;
+    }
+`
